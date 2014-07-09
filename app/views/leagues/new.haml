@@ -5,7 +5,7 @@
     = f.label :name
     = f.text_area :name
   %p
-    = f.select
+    = f.select :sport_id, options_for_select(@sports_options)
   %p
     = f.label :espn_id
     = f.text_area :espn_id
