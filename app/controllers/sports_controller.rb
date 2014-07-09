@@ -1,6 +1,10 @@
 class SportsController < ApplicationController
-  def show
 
+  def index
+    @sports = Sport.all
+  end
+
+  def show
   end
 
 end

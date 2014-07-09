@@ -1,0 +1,14 @@
+%p Let's cook up a league, shall we?
+
+= form_for @league do |f|
+  %p
+    = f.label :name
+    = f.text_area :name
+  %p
+    = f.label :sport_id
+    = f.text_area :sport_id
+  %p
+    = f.label :espn_id
+    = f.text_area :espn_id
+  %p
+    = f.submit
