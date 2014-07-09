@@ -1,6 +1,9 @@
 class LeaguesController < ApplicationController
-  def show
+  def index
+    @leagues = League.all
+  end
 
+  def show
   end
 
   def new

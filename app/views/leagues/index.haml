@@ -1,0 +1,11 @@
+%h3 Here are some leagues.
+
+%h4 Don't see any?
+
+%p Wah sauce.
+
+= link_to 'Add yours', new_sport_league_path, class: 'button'
+
+- @leagues.each do |league|
+  %p
+    = league.name
