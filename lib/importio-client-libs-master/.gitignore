@@ -1,0 +1,10 @@
+*.class
+*.pyc
+*.classpath
+*.project
+*.prefs
+surefire-reports
+maven-status
+ruby/*.gem
+python/dist
+python/build

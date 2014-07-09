@@ -1,0 +1,21 @@
+%header
+  %div.row
+    %nav.top-bar
+      %ul.title-area
+        %li.name
+          %div.button.login_button Login
+          %div.button.login_button Admin
+          %div.login_section
+            - if user_signed_in?
+              Logged in as
+              = succeed "." do
+                %strong= current_user.email
+              = link_to 'Edit Profile', edit_user_registration_path
+              |
+              \#{link_to "Logout", destroy_user_session_path, method: :delete}
+            - else
+              = link_to 'Sign Up', new_user_registration_path
+  %div.row
+    %div.large-3.columns.left_header_menu
+    %div.large-9.columns
+

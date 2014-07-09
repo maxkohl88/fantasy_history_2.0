@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+.row {
+  max-width: none;
+}
+
+.top-bar {
+  background-color: rgba(39, 174, 96,0.8);
+}
+
+.login_button {
+  background-color: rgba(39, 174, 96,0.8);
+  font-weight: bold;
+}
+
+.left_header_menu {
+  height: 175px;
+  background-color: rgba(39, 174, 96,0.8);
+}
+
+body {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+.left_body_menu {
+  min-height: 600px;
+  background-color: rgba(39, 174, 96,0.8);
+}
+
+.title_container {
+  margin-right: 100px;
+}
