@@ -1,9 +1,11 @@
 class LeaguesController < ApplicationController
   def index
     @leagues = League.all
+    @sport = Sport.find(params[:sport_id])
   end
 
   def show
+    @sport = Sport.find(params[:id])
   end
 
   def new

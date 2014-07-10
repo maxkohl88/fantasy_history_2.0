@@ -6,6 +6,6 @@
 
 = link_to 'Add yours', new_sport_league_path, class: 'button'
 
-- @leagues.each do |league|
+- @sport.leagues.each do |league|
   %p
-    = league.name
+    = link_to "#{league.name}", sport_league_path(@sport, league)
