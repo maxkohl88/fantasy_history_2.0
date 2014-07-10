@@ -51,19 +51,25 @@ class RecordsController < ApplicationController
 
     importio_data_array = data_rows[0]
 
-    binding.pry
-
     @sport = Sport.find(params[:sport_id])
     @league = @sport.leagues.find(params[:league_id])
-    @record = @league.records.new(record_params)
-    @record.wins = importio_data_array[0]['wins/_source']
-    @record.losses = importio_data_array[0]['losses/_source']
-    @record.ties = importio_data_array[0]['ties/_source']
-    @record.team_name = importio_data_array[0]['team/_text']
-    @record.team_url = importio_data_array[0]['team/_source']
+    @new_records = []
 
-    if @record.save
-      redirect_to sport_league_path(@sport, @league)
+    importio_data_array.each do |row|
+      @record = @league.records.new(record_params)
+      @record.wins = row['wins/_source']
+      @record.losses = row['losses/_source']
+      @record.ties = row['ties/_source']
+      @record.team_name = row['team/_text']
+      @record.team_url = row['team/_source']
+
+      @new_records << @record
+    end
+
+    # binding.pry
+
+    if @new_records.each { |record| record.save }
+      redirect_to sport_league_path(@sport, @league), success: 'League records imported!'
     else
       render :new
     end

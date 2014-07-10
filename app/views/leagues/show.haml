@@ -3,3 +3,18 @@
 = link_to 'Add some records', new_sport_league_record_path(@sport, @league)
 
 = link_to 'Back', sport_leagues_path
+
+
+%table
+  %tr
+    %td Team
+    %td Wins
+    %td Losses
+  - @league.records.order(:wins).reverse.each do |record|
+    %tr
+      %td
+        = record.team_name
+      %td
+        = record.wins
+      %td
+        = record.losses

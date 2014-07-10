@@ -49,3 +49,7 @@ h1 {
 .title_container {
   margin-right: 100px;
 }
+
+table {
+  margin: 0 auto;
+}
