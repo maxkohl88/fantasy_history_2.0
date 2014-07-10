@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709194846) do
+ActiveRecord::Schema.define(version: 20140710013608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140709194846) do
     t.integer "ties"
     t.boolean "championship"
     t.integer "league_id"
+    t.string  "team_name"
   end
 
   add_index "records", ["league_id"], name: "index_records_on_league_id", using: :btree

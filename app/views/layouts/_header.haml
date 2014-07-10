@@ -3,8 +3,8 @@
     %nav.top-bar
       %ul.title-area
         %li.name
-          %div.button.login_button Login
-          %div.button.login_button Admin
+          %div
+            = link_to 'Login', new_user_session_path
           %div.login_section
             - if user_signed_in?
               Logged in as

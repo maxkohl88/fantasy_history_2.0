@@ -1,4 +1,4 @@
-require "./ruby/importio.rb"
+require "../ruby/importio.rb"
 require "json"
 require 'pry'
 

@@ -9,3 +9,5 @@
 - @sport.leagues.each do |league|
   %p
     = link_to "#{league.name}", sport_league_path(@sport, league)
+
+= link_to 'Back', sports_path

@@ -1,0 +1,8 @@
+%p Add some records heyah
+
+= form_for [@sport, @league, @record] do |f|
+  %p
+    = f.label :year
+    = f.text_area :year
+  %p
+    = f.submit
