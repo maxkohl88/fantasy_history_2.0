@@ -1,16 +1,18 @@
-%h2 Look at my sports, my sports are amazing.
-
 %div.row
-  %div.large-4.columns
-  %div.large-4.columns
+  %div.large-3.columns.left_body_menu
+    %p What can I do on this page?
+  %div.large-5.columns
+    %div.row
+      %h2 Look at my sports, my sports are amazing.
     - @sports.each do |sport|
       %div.row
         %h4
           = sport.name
-      %div.row
-        %div.small-6.columns
+      %div.row.sport_options
+        %div.small-5.columns
           = link_to 'See the leagues', sport_leagues_path(sport), class: 'button'
-        %div.small-6.columns
+        %div.small-2.columns
+        %div.small-5.columns
           = link_to 'Add a new league', new_sport_league_path(sport), class: 'button'
   %div.large-4.columns
 
