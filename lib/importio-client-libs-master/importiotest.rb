@@ -57,5 +57,3 @@ client.disconnect
 # Now we can print out the data we got
 puts "All data received:"
 results = JSON.pretty_generate(data_rows)
-
-binding.pry
