@@ -3,8 +3,7 @@
     %div.login_section
       - if user_signed_in?
         Logged in as
-        = succeed "." do
-          %strong= current_user.email
+        %strong= current_user.email
         = link_to 'Edit Profile', edit_user_registration_path
         |
         = link_to "Logout", destroy_user_session_path, method: :delete
@@ -12,5 +11,11 @@
         = link_to 'Login', new_user_session_path
         |
         = link_to 'Sign Up', new_user_registration_path
+    -# %nav.breadcrumbs
+    -#   %div
+    -#     = link_to 'Sports', sports_path
+    -#   %div
+    -#     = link_to 'Leagues', sport_leagues_path
+
 
 

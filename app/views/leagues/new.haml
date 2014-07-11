@@ -1,6 +1,6 @@
 %p Let's cook up a league, shall we?
 
-= form_for @league do |f|
+= form_for [@sport, @league] do |f|
   %p
     = f.label :name
     = f.text_area :name

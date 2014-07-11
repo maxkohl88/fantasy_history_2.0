@@ -19,31 +19,37 @@
 }
 
 .top-bar {
-  background-color: rgba(39, 174, 96,0.8);
+  background-color: rgba(25, 144, 75, 0.8);
 }
 
-.login_button {
-  background-color: rgba(39, 174, 96,0.8);
-  font-weight: bold;
-}
-
-.left_header_menu {
-  height: 175px;
-  background-color: rgba(39, 174, 96,0.8);
+.login_section {
+  float: right;
+  margin-right: 15px;
+  color: white;
 }
 
 body {
   text-align: center;
   font-family: 'Lato', sans-serif;
+  /*background-color: rgba(236, 240, 241,1.0);*/
 }
 
 h1 {
   font-size: 45px;
 }
 
+.button {
+  background-color: rgba(0, 0, 0, 0.72);
+}
+
+.sports_buttons {
+  margin-top: 45px;
+}
+
 .left_body_menu {
   min-height: 800px;
-  background-color: rgba(39, 174, 96,0.8);
+  background-color: rgba(25, 144, 75, 0.8);
+  color: white;
 }
 
 .title_container {

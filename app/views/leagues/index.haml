@@ -1,13 +1,20 @@
-%h3 Here are some leagues.
+%div.row
+  %div.large-3.columns.left_body_menu
+    %div.row
+      %p What can I do on this page?
+    %div.row
+      = link_to 'Add your league', new_sport_league_path, class: 'button'
+  %div.large-9.columns
+    %h3
+      = "Here are some #{@sport.name.downcase} leagues."
+    %div.logo_image
+      = image_tag "#{@sport.name.downcase}-logo.png"
+    %h4 Don't see any?
 
-%h4 Don't see any?
+    %p Wah sauce.
 
-%p Wah sauce.
+    - @sport.leagues.each do |league|
+      %p
+        = link_to "#{league.name}", sport_league_path(@sport, league)
 
-= link_to 'Add yours', new_sport_league_path, class: 'button'
-
-- @sport.leagues.each do |league|
-  %p
-    = link_to "#{league.name}", sport_league_path(@sport, league)
-
-= link_to 'Back', sports_path
+    = link_to 'Back', sports_path

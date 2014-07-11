@@ -5,18 +5,20 @@ class LeaguesController < ApplicationController
   end
 
   def show
-    @sport = Sport.find(params[:id])
-    @league = League.find(params[:id])
+    @sport = Sport.find(params[:sport_id])
+    @league = @sport.leagues.find(params[:id])
   end
 
   def new
-    @league = League.new
+    @sport = Sport.find(params[:sport_id])
+    @league = @sport.leagues.new
+
     @sports_options = Sport.all.map{ |sport| [sport.name, sport.id]}
   end
 
   def create
-    @league = League.new(league_params)
-    @sport = @league.sport_id
+    @sport = Sport.find(params[:sport_id])
+    @league = @sport.leagues.new(league_params)
 
     if @league.save
       redirect_to sport_leagues_path(@sport), notice: "You've successfully added your league!"
