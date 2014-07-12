@@ -3,6 +3,8 @@ class League < ActiveRecord::Base
   has_many :records
   has_many :teams
 
+  validates :sport_id, :espn_id, presence: true
+
   def all_time_records_total
     all_records = self.records
     team_ids = all_records.map{ |record| record.team_id }.uniq

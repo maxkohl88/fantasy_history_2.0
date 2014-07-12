@@ -4,6 +4,8 @@ class Record < ActiveRecord::Base
   belongs_to :league
   belongs_to :team
 
+  validates :wins, :losses, :ties, :year, :league_id, :team_id, presence: true
+
   def importio_import
     client = Importio::new("b66ea9de-3b8e-497f-931a-91d25710d3b1","v/S9sPDS/kPHTbxtzA8F9l6SKg4x1PDkWeNXDOxYPBbIgWlawN5xrodjtnds6mgQCS6g8AFS9AKPoTaNM9kI1Q==", "https://query.import.io")
     # Once we have started the client and authenticated, we need to connect it to the server:

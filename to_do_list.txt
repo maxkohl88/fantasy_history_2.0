@@ -13,3 +13,7 @@ on league page:
   move new records form into the left nav
   ability to sort by year (current, 2013, 2012, etc.)
   main display is summing up all years
+
+VALIDATIONS
+
+records can't be created without wins, losses, ties, and team
