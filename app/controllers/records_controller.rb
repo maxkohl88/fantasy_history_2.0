@@ -51,15 +51,22 @@ class RecordsController < ApplicationController
     importio_data_array = data_rows[0]
 
     importio_data_array.each do |row|
+      @team = @league.teams.new
+      @team.name = row['team/_title']
+      @team.team_url = row['team/_source'].split('&seasonId')[0]
+
+      @team.save
+
       @record = @league.records.new(record_params)
       @record.wins = row['wins/_source']
       @record.losses = row['losses/_source']
       @record.ties = row['ties/_source']
-      @record.team_name = row['team/_title']
-      @record.team_url = row['team/_source']
       @record.year = record_params[:year]
+      @record.team_id = Team.find_by(team_url: row['team/_source'].split('&seasonId')[0]).id
 
       @new_records << @record
+
+      # binding.pry
     end
 
     if @new_records.each { |record| record.save }

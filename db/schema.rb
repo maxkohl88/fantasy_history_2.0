@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710182726) do
+ActiveRecord::Schema.define(version: 20140711210528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,9 +32,8 @@ ActiveRecord::Schema.define(version: 20140710182726) do
     t.integer "ties"
     t.boolean "championship"
     t.integer "league_id"
-    t.string  "team_name"
     t.integer "year"
-    t.text    "team_url"
+    t.integer "team_id"
   end
 
   add_index "records", ["league_id"], name: "index_records_on_league_id", using: :btree
@@ -44,6 +43,16 @@ ActiveRecord::Schema.define(version: 20140710182726) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "teams", force: true do |t|
+    t.string   "name"
+    t.string   "team_url"
+    t.integer  "league_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "teams", ["league_id"], name: "index_teams_on_league_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

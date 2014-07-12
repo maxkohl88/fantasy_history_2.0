@@ -2,25 +2,6 @@ when a user logs in (or if they are logged in when they come to the site),
 redirect the user to the sports#index page
 
 
-if baseball
-  http://games.espn.go.com/flb/...........
-
-
-done
-
-user adds their league records
-  enter year
-
-done
-
-url manipulation
-  add constant hash for sport to flb, fba, etc
-
-
-
-if football
-  http://games.espn.go.com/ffl/............
-
 if basketball
   http://games.espn.go.com/fba/..........
 

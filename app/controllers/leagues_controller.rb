@@ -7,6 +7,8 @@ class LeaguesController < ApplicationController
   def show
     @sport = Sport.find(params[:sport_id])
     @league = @sport.leagues.find(params[:id])
+
+    @league_records = @league.all_time_records_total
   end
 
   def new
