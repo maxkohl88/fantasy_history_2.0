@@ -10,21 +10,22 @@
       = @league.name
     %div.year_links
       = link_to 'All time standings'
-      |
-      = link_to 'Current Season'
+      - @league_years.each do |year|
+        |
+        = link_to "#{year} Season", sport_league_path(@sport, @league, year: year)
     %table
       %tr
         %td Team
         %td Wins
         %td Losses
         %td Ties
-        - @league_records.sort.reverse.each do |record|
+        - @league_records.each do |record|
           %tr
             %td
-              = record[3]
+              = record[:team_name]
             %td
-              = record[0]
+              = record[:wins]
             %td
-              = record[1]
+              = record[:losses]
             %td
-              = record[2]
+              = record[:ties]

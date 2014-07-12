@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/activerecord-hackery/ransack.git
+  revision: 6fa74a079ae33e520c9d69a6e6dfc45cc055b323
+  branch: rails-4
+  specs:
+    ransack (1.2.3)
+      actionpack (>= 4.0)
+      activerecord (>= 4.0)
+      activesupport (>= 4.0)
+      i18n
+      polyamorous (~> 1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,6 +92,8 @@ GEM
     multi_json (1.10.1)
     orm_adapter (0.5.0)
     pg (0.17.1)
+    polyamorous (1.0.0)
+      activerecord (>= 3.0)
     polyglot (0.3.5)
     pry (0.10.0)
       coderay (~> 1.1.0)
@@ -170,6 +184,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.1.2)
   rails_12factor
+  ransack!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

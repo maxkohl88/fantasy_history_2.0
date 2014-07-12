@@ -32,6 +32,7 @@ gem 'pry-rails'
 gem 'pry-byebug',    group: :development
 gem 'http-cookie'
 gem 'rails_12factor'
+gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

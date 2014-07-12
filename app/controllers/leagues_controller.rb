@@ -8,7 +8,25 @@ class LeaguesController < ApplicationController
     @sport = Sport.find(params[:sport_id])
     @league = @sport.leagues.find(params[:id])
 
-    @league_records = @league.all_time_records_total
+    @league_years = @league.get_all_years.sort.reverse
+
+    @year_results = @league.records.where(year: params[:year])
+
+    if (params.has_key?(:year))
+    total_records = []
+      @year_results.each do |record|
+        hash = {}
+        hash[:wins] = record.wins
+        hash[:losses] = record.losses
+        hash[:ties] = record.ties
+        hash[:team_name] = record.team.name
+
+        total_records << hash
+      end
+      @league_records = total_records
+    else
+      @league_records = @league.all_time_records_total
+    end
   end
 
   def new
