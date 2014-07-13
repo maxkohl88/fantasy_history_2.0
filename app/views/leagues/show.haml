@@ -2,9 +2,9 @@
   %div.large-3.columns.left_body_menu
     %p What can I do on this page?
     %p
-      = link_to 'Add some records', new_sport_league_record_path(@sport, @league)
+      = link_to 'Add some records', new_sport_league_record_path(@sport, @league), class: 'button'
     %p
-      = link_to 'Back', sport_leagues_path
+      = link_to 'Back', sport_leagues_path, class: 'button'
   %div.large-9.columns
     %p
       = @league.name
@@ -29,3 +29,5 @@
               = record[:losses]
             %td
               = record[:ties]
+    %div
+      = line_chart @table_values

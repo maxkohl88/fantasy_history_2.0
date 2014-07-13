@@ -6,3 +6,9 @@
     = f.text_area :year
   %p
     = f.submit
+
+%div
+  You already have records for the following years:
+  - @league_years.each do |year|
+    %p
+      = year

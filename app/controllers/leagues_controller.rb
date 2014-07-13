@@ -27,6 +27,23 @@ class LeaguesController < ApplicationController
     else
       @league_records = @league.all_time_records_total
     end
+
+    @teams = @league.teams
+
+    @table_values =[]
+
+    @teams.each do |team|
+      yearly_data = []
+
+      @league_years.each do |year|
+        target_record = team.records.find_by(year: year)
+        unless target_record.nil? || yearly_data << [year, target_record[:wins]]
+        end
+      end
+
+      unless yearly_data.empty? || @table_values << {name: team.name, data: yearly_data}
+      end
+    end
   end
 
   def new

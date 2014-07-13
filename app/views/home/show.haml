@@ -1,5 +1,7 @@
 %div.row
   %div.large-3.columns.left_body_menu
+    - if user_signed_in?
+      = link_to 'Entry, please', sports_path, class: 'button'
   %div.large-3.columns
   %div.large-3.columns.title_container
     %h1 The Records.
