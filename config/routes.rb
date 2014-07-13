@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :sports do
     resources :leagues do
       resources :records
+      resources :baseball_stats, only: [:index, :new, :create]
     end
   end
 

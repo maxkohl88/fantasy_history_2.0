@@ -1,16 +1,6 @@
-when a user logs in (or if they are logged in when they come to the site),
-redirect the user to the sports#index page
-
-
-if basketball
-  http://games.espn.go.com/fba/..........
-
-  (hold off on basketball for now, as it will probably require a different scraper)
-
 
 on league page:
 
   move new records form into the left nav
-  ability to sort by year (current, 2013, 2012, etc.)
 
 

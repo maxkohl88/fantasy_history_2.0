@@ -66,8 +66,6 @@ class RecordsController < ApplicationController
       @record.team_id = Team.find_by(team_url: row['team/_source'].split('&seasonId')[0]).id
 
       @new_records << @record
-
-      # binding.pry
     end
 
     if @new_records.each { |record| record.save }

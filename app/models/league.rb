@@ -2,6 +2,7 @@ class League < ActiveRecord::Base
   belongs_to :sport
   has_many :records
   has_many :teams
+  has_many :baseball_stats
 
   validates :sport_id, :espn_id, presence: true
 

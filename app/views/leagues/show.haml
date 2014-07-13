@@ -4,6 +4,8 @@
     %p
       = link_to 'Add some records', new_sport_league_record_path(@sport, @league), class: 'button'
     %p
+      = link_to 'Add stats', new_sport_league_baseball_stat_path(@sport, @league), class: 'button'
+    %p
       = link_to 'Back', sport_leagues_path, class: 'button'
   %div.large-9.columns
     %p

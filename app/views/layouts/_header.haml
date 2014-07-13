@@ -11,6 +11,12 @@
         = link_to 'Login', new_user_session_path
         |
         = link_to 'Sign Up', new_user_registration_path
+    %div.row.top_bar
+      %p.notice
+        = notice
+      %p.alert
+        = alert
+
     -# %nav.breadcrumbs
     -#   %div
     -#     = link_to 'Sports', sports_path
