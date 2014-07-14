@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Sport.delete_all
+
+Sport.create!(name: 'Baseball')
+Sport.create!(name: 'Basketball')
+Sport.create!(name: 'Football')
