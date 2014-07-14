@@ -2,7 +2,7 @@
   %nav.top-bar
     %ul.title-area
       %li
-        %p.name The Records.
+        = link_to 'The Records.', root_path, class: 'name'
     %div.login_section
       - if user_signed_in?
         Logged in as

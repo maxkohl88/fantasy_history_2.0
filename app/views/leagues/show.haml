@@ -6,7 +6,7 @@
     %p
       = link_to 'Add stats', new_sport_league_baseball_stat_path(@sport, @league), class: 'button'
     %p
-      = link_to 'Back', sport_leagues_path, class: 'button'
+      = link_to 'Go back', sport_leagues_path, class: 'button'
   %div.large-9.columns
     %p
       = @league.name
@@ -21,7 +21,7 @@
         %td Wins
         %td Losses
         %td Ties
-        - @league_records.each do |record|
+        - @league_records.reverse.each do |record|
           %tr
             %td
               = record[:team_name]

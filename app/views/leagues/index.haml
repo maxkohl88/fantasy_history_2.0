@@ -5,17 +5,16 @@
 
     %div.row
       = link_to 'Add your league', new_sport_league_path, class: 'button'
+
+    %div.row
+      = link_to 'Go Back', sports_path, class: 'button'
+      (Because this page kinda sucks right now)
   %div.large-9.columns
     %h3
-      = "Here are some #{@sport.name.downcase} leagues."
+      = "Search the #{@sport.name.downcase} records."
     %div.logo_image
       = image_tag "#{@sport.name.downcase}-logo.png"
-    %h4 Don't see any?
-
-    %p Wah sauce.
 
     - @sport.leagues.each do |league|
       %p
         = link_to "#{league.name}", sport_league_path(@sport, league)
-
-    = link_to 'Back', sports_path

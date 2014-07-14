@@ -28,6 +28,8 @@ class LeaguesController < ApplicationController
       @league_records = @league.all_time_records_total
     end
 
+    @league_records.sort!{ |x, y| x[:wins] <=> y[:wins] }
+
     @teams = @league.teams
 
     @table_values =[]
