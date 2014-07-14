@@ -1,9 +1,0 @@
-%p Add some stats heyah
-
-= form_for [@sport, @league, @baseball_stat] do |f|
-  %p
-    = f.label :year
-    = f.text_area :year
-  %p
-    = f.select :team_id, options_for_select(@team_options)
-    = f.submit
