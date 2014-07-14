@@ -1,9 +1,12 @@
 %div.row
   %nav.top-bar
+    %ul.title-area
+      %li
+        %p.name The Records.
     %div.login_section
       - if user_signed_in?
         Logged in as
-        %strong= current_user.email
+        %strong.email_address= current_user.email
         = link_to 'Edit Profile', edit_user_registration_path
         |
         = link_to "Logout", destroy_user_session_path, method: :delete

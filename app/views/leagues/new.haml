@@ -1,13 +1,25 @@
-%p Let's cook up a league, shall we?
+%div.row
+  %h3 This is where it all begins.
+%div.row.new_league_content
+  %div.large-8.columns
+    %div.new_league_form
+      = form_for [@sport, @league] do |f|
+        %p
+          = f.label :name
+          = f.text_area :name
+        %p
+          = f.label :sport_id
+          = f.select :sport_id, options_for_select(@sports_options)
+        %p
+          = f.label :espn_id, 'ESPN League ID*'
+          = f.text_area :espn_id, placeholder: 'ex: 140424'
+        %p
+          = f.submit "Save", class: 'button'
+  %div.large-4.columns
+    %div.row
+      * What's my league's ESPN ID, and where can I find it?
+    %div.row.id_instructions
+      Simply navigate to your league's page, and you'll find your ID right in the url.
+      %p
+      = image_tag "League-ID-Instructions.png"
 
-= form_for [@sport, @league] do |f|
-  %p
-    = f.label :name
-    = f.text_area :name
-  %p
-    = f.select :sport_id, options_for_select(@sports_options)
-  %p
-    = f.label :espn_id
-    = f.text_area :espn_id
-  %p
-    = f.submit

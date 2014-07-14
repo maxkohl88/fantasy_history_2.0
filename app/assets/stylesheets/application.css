@@ -22,10 +22,24 @@
   background-color: rgba(25, 144, 75, 0.8);
 }
 
+.top-bar .name {
+  margin-left: 10px;
+  font-size: 30px;
+  color: white;
+}
+
 .login_section {
   float: right;
   margin-right: 15px;
   color: white;
+}
+
+.login_section a {
+  color: white;
+}
+
+.email_address {
+  margin-right: 10px;
 }
 
 body {
@@ -50,6 +64,33 @@ h1 {
   min-height: 800px;
   background-color: rgba(25, 144, 75, 0.8);
   color: white;
+  padding: 10px;
+}
+
+.side_options {
+  margin-top: 25px;
+  list-style-type: none;
+}
+
+.content_box {
+  height: 100%;
+  position: relative;
+}
+
+.sport_images {
+  margin-top: 15px;
+}
+
+.elders {
+  margin-top: 50px;
+}
+
+.elder_headers {
+  float: left;
+}
+
+.elder_leagues {
+  float: left;
 }
 
 .title_container {
@@ -59,3 +100,56 @@ h1 {
 table {
   margin: 0 auto;
 }
+
+.format_info {
+  position: relative;
+  height: 100%;
+  margin-top: 40px;
+}
+
+.league_formats {
+  list-style-type: none;
+  font-style: italic;
+  min-height: 100px;
+  position: relative;
+}
+
+.rules_links {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-right: 10px;
+  float: right;
+}
+
+.scoring_category {
+  float: left;
+}
+
+.row .notes_row {
+  margin-top: 40px;
+  margin-left: 115px;
+}
+
+.league_notes {
+  font-style: italic;
+  min-height: 100px;
+}
+
+
+/*new league form*/
+
+.new_league_content {
+  margin-top: 50px;
+}
+
+.new_league_form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.row .id_instructions {
+  margin-top: 25px;
+  margin-right: 25px;
+}
+
+

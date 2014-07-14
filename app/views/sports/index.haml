@@ -1,18 +1,72 @@
 %div.row
   %div.large-3.columns.left_body_menu
-    %p What can I do on this page?
-  %div.large-9.columns
+    %div.side_content
+      %div What can I do here?
+      %ul.side_options
+        %li See the oldest leagues for each sport
+        %li Check out all leagues for each sport
+        %li Add a new league
+        %li See which scoring formats
+
+
+
+  %div.large-9.columns.content_box
     %div.row
-      %h2 Look at my sports, my sports are amazing.
     - @sports.each do |sport|
-      %div.row
-        %h4
-          -# = sport.name
       %div.row.sport_options
-        %div.small-2.columns
+        %div.small-2.columns.sport_images
           = image_tag "#{sport.name.downcase}-logo.png"
-        %div.small-5.columns.sports_buttons
-          = link_to 'See the leagues', sport_leagues_path(sport), class: 'button'
-        %div.small-5.columns.sports_buttons
-          = link_to 'Add a new league', new_sport_league_path(sport), class: 'button'
+        %div.small-10.columns
+          %div.small-7.columns.elders
+            %div.row
+              %span.elder_headers The Elder Leagues
+            %div.row
+              %ul
+              - sport.leagues.each do |league|
+                %li.elder_leagues
+                  = link_to "#{league.name}", sport_league_path(sport, league)
+          %div.small-2.columns.sports_buttons
+            = link_to 'See all leagues', sport_leagues_path(sport), class: 'button'
+          %div.small-3.columns.sports_buttons
+            = link_to 'Add a new league', new_sport_league_path(sport), class: 'button'
+    %div.row
+      %div.medium-6.columns
+        %div.row
+          %span Supported league scoring formats:
+        %div.row
+          %div.small-4.columns.format_info
+            %div.row.league_formats
+              %span Baseball:
+            %div.row.league_formats
+              %span Basketball:
+            %div.row.league_formats
+              %span Football:
+          %div.small-8.columns.format_info
+            %div.row.league_formats
+              %div.scoring_category Head-to-Head: Points
+              %div.rules_links
+                = link_to 'ESPN Standard', "http://games.espn.go.com/flb/resources/help/content?name=scoring-formats", target: '_blank'
+            %div.row.league_formats
+              %div.scoring_category Head-to-Head: Points
+              %div.rules_links
+                = link_to 'ESPN Standard', "http://games.espn.go.com/fba/resources/help/content?name=scoring-formats", target: '_blank'
+            %div.row.league_formats
+              %div.scoring_category Head To Head Standard Scoring
+              %div.rules_links
+                = link_to 'ESPN Standard', "http://games.espn.go.com/ffl/resources/help/content?name=scoring-formats", target: '_blank'
+      %div.medium-6.columns
+        %div.row
+          %span Notes
+        %div.row.notes_row
+          %div.small-2.columns
+          %div.small-8.columns
+            %row.league_notes
+              %p Active stats are currently under a bit of construction. They'll be up soon!
+            %row.league_notes
+              %p There is no limit to the number of teams in each league
+            %row.league_notes
+              %p The importer can only grab standings for one divison. Never fear, support for multiple divisions is on it's way.
+          %div.small-2.columns
+
+
 
