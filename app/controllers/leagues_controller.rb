@@ -8,10 +8,14 @@ class LeaguesController < ApplicationController
     @sport = Sport.find(params[:sport_id])
     @league = @sport.leagues.find(params[:id])
 
+    #find all the years for which this league has records for
     @league_years = @league.get_all_years.sort.reverse
 
+    #find all of the data needed to populate the league standings table
     @year_results = @league.records.where(year: params[:year])
 
+    #determine if the table will show composite record history or show records
+    #for a specific year
     if (params.has_key?(:year))
     total_records = []
       @year_results.each do |record|
@@ -28,12 +32,17 @@ class LeaguesController < ApplicationController
       @league_records = @league.all_time_records_total
     end
 
+    #sort the data heading to the table by total wins
     @league_records.sort!{ |x, y| x[:wins] <=> y[:wins] }
 
+    #find all teams for this league
     @teams = @league.teams
 
+    #initialize an empty array for the data heading to the league graph
     @table_values =[]
 
+    #this method converts the historical league records into an optimal format
+    #for passing to the league graph
     @teams.each do |team|
       yearly_data = []
 

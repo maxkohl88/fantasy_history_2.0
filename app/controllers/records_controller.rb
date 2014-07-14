@@ -1,6 +1,8 @@
 require 'importio.rb'
 
 class RecordsController < ApplicationController
+  #constant to save the sport abbreviations needed to construct the league page
+  #url for ESPN
   SPORTS_ABBREVIATIONS = {
     baseball: 'flb',
     basketball: 'fba',
@@ -20,10 +22,18 @@ class RecordsController < ApplicationController
     @league = @sport.leagues.find(params[:league_id])
     @new_records = []
 
+
+
+    ## I am aware that my public key is here in the controller. I'm a bonehead
+    ## and didn't extract it before commiting. Whoopsies. Going to get a new one
+    ## and prevent public exposure.
+    #defines the Importio API client
     client = Importio::new("b66ea9de-3b8e-497f-931a-91d25710d3b1","v/S9sPDS/kPHTbxtzA8F9l6SKg4x1PDkWeNXDOxYPBbIgWlawN5xrodjtnds6mgQCS6g8AFS9AKPoTaNM9kI1Q==", "https://query.import.io")
 
+    #create a blank array where the returned data will be stored
     data_rows = []
 
+    #define callbacks that are sent with the API query
     callback = lambda do |query, message|
       if message["type"] == "DISCONNECT"
         puts "The query was cancelled as the client was disconnected"
@@ -42,15 +52,23 @@ class RecordsController < ApplicationController
         puts "Query finished"
       end
     end
+
+    #connect to the API
     client.connect
 
+    #dynamically build the request URL and make the request to the Importio API
     client.query({"input"=>{"webpage/url"=>"http://games.espn.go.com/#{SPORTS_ABBREVIATIONS[@sport.name.downcase.to_sym]}/standings?leagueId=#{@league.espn_id}&seasonId=#{record_params[:year]}"},"connectorGuids"=>["d5170dfc-fdd8-4227-8d19-446480420690"]}, callback )
 
+    #join all data together
     client.join
+    #disconnect from API
     client.disconnect
-
+    #extract the actual JSON hash from the data_results
     importio_data_array = data_rows[0]
 
+    #this is a beast. loop through each returned block of JSON and create new
+    #teams and new records for that league. Teams validate on uniqueness so
+    #this won't create a new team if it already exists in the database.
     importio_data_array.each do |row|
       @team = @league.teams.new
       @team.name = row['team/_title']
@@ -68,6 +86,7 @@ class RecordsController < ApplicationController
       @new_records << @record
     end
 
+    #save all those new records
     if @new_records.each { |record| record.save }
       redirect_to sport_league_path(@sport, @league), success: 'League records imported!'
     else
