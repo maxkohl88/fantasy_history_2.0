@@ -19,6 +19,21 @@
   max-width: 500px;
 }
 
+.row .user_login {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.row .forgot_password {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.row .edit_user {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
 .row {
   max-width: none;
 }
@@ -156,6 +171,10 @@ table {
 .row .id_instructions {
   margin-top: 25px;
   margin-right: 25px;
+}
+
+.powered_by {
+  margin-top: 10px;
 }
 
 
