@@ -39,6 +39,11 @@
   max-width: 500px;
 }
 
+.row .new_baseball_stats {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
 .row {
   max-width: none;
 }
@@ -85,6 +90,10 @@ h1 {
   background-color: rgba(0, 0, 0, 0.72);
 }
 
+.button:hover {
+  background-color: rgba(25, 144, 75, 0.8);
+}
+
 .sports_buttons {
   margin-top: 45px;
 }
@@ -99,6 +108,10 @@ h1 {
 .side_options {
   margin-top: 25px;
   list-style-type: none;
+}
+
+.side_option_line {
+  margin-top: 10px;
 }
 
 .content_box {
@@ -120,6 +133,7 @@ h1 {
 
 .elder_leagues {
   float: left;
+  margin-right: 10px;
 }
 
 .title_container {

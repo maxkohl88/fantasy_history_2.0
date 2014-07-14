@@ -1,9 +1,19 @@
-%p Add some stats heyah
+%div.row
+  %p Add some stats heyah
 
-= form_for [@sport, @league, @baseball_stat] do |f|
-  %p
-    = f.label :year
-    = f.text_area :year
-  %p
-    = f.select :team_id, options_for_select(@team_options)
-    = f.submit
+%div.row
+  %p This feature doesn't work yet. It'll probably break the internet if you try it.
+  %p ...please don't try it.
+%div.row
+  %div.row.new_baseball_stats
+    = form_for [@sport, @league, @baseball_stat] do |f|
+      %p
+        = f.label :year
+        = f.text_area :year
+      %p
+        = f.label :team_id
+        = f.select :team_id, options_for_select(@team_options)
+      %p
+        = f.submit 'Import stats', class: 'button'
+%div.row
+  = link_to 'Go back', sport_league_path(@sport, @league), class: 'button'
