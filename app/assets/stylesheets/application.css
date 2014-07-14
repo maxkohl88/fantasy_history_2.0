@@ -51,7 +51,10 @@
   margin-left: 10px;
   font-size: 30px;
   color: white;
+}
 
+.top-bar .title-area {
+  margin-top: -3px;
 }
 
 .login_section {
