@@ -137,7 +137,7 @@ h1 {
 }
 
 .title_container {
-  margin-right: -500px;
+  margin-right: 0px;
   margin-top: 50px;
 }
 
@@ -148,8 +148,8 @@ h1 {
     rgba(25, 144, 75, 0.8), white);
 }
 
-.row .feature_demos {
-  margin-top: 150px;
+.feature_demos {
+  margin-top: 50px;
 }
 
 .feature_image {
