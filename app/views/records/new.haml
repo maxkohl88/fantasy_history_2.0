@@ -1,13 +1,15 @@
-%p Add some records heyah
+%div.row
+  %h5 Add some records heyah
+%div.row
+  %div.row.new_league_record
+    = form_for [@sport, @league, @record] do |f|
+      %p
+        = f.label :year
+        = f.text_area :year
+      %p
+        = f.submit 'Import Records', class: 'button'
 
-= form_for [@sport, @league, @record] do |f|
-  %p
-    = f.label :year
-    = f.text_area :year
-  %p
-    = f.submit
-
-%div
+%div.row
   You already have records for the following years:
   - @league_years.each do |year|
     %p

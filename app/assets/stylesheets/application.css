@@ -34,6 +34,11 @@
   max-width: 500px;
 }
 
+.row .new_league_record {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
 .row {
   max-width: none;
 }
@@ -116,6 +121,7 @@ h1 {
 
 .title_container {
   margin-right: 100px;
+  margin-top: 150px;
 }
 
 table {
