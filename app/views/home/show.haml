@@ -2,7 +2,24 @@
   %div.large-3.columns.left_body_menu
     - if user_signed_in?
       = link_to 'Entry, please', sports_path, class: 'button'
-  %div.large-3.columns
-  %div.large-3.columns.title_container
-    %h1 The Records.
-    %p A history book for your fantasy sports leagues.
+  %div.large-9.columns
+    %div.row
+      %div.title_container
+        %h1 The Records.
+        %p A history book for your fantasy sports leagues.
+    %div.row.feature_demos
+      %div.row
+        %p So what's this all about?
+      %div.row.feature_columns
+        %div.medium-6.columns
+          %row
+            %strong See all-time standings for your league:
+          %row
+            %div
+            = image_tag "leaguestandingstable.png", class: 'feature_image'
+        %div.medium-6.columns
+          %row
+            %strong See trends in yearly win totals:
+          %row
+            %div
+            = image_tag "leaguestandingsgraph.png", class: 'feature_image main_graph_image'
