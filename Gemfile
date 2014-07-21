@@ -34,6 +34,7 @@ gem 'http-cookie'
 gem 'rails_12factor'
 gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
 gem "chartkick"
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
