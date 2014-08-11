@@ -1,7 +1,7 @@
 class SportsController < ApplicationController
 
   def index
-    @sports = Sport.all
+    @sports = Sport.includes(:leagues).all
   end
 
   def show

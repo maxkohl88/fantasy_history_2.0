@@ -36,6 +36,7 @@ gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
 gem "chartkick"
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem "bullet", :group => "development"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
