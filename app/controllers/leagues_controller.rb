@@ -6,7 +6,7 @@ class LeaguesController < ApplicationController
 
   def show
     @sport = Sport.find(params[:sport_id])
-    @league = @sport.leagues.includes(:records).find(params[:id])
+    @league = @sport.leagues.find(params[:id])
 
     #find all the years for which this league has records for
     @league_years = @league.get_all_years.sort.reverse
