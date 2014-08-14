@@ -22,11 +22,6 @@ class RecordsController < ApplicationController
     @league = @sport.leagues.find(params[:league_id])
     @new_records = []
 
-
-
-    ## I am aware that my public key is here in the controller. I'm a bonehead
-    ## and didn't extract it before commiting. Whoopsies. Going to get a new one
-    ## and prevent public exposure.
     #defines the Importio API client
     client = Importio::new("b66ea9de-3b8e-497f-931a-91d25710d3b1", ENV["IMPORTIO_TOKEN"], "https://query.import.io")
     #create a blank array where the returned data will be stored
