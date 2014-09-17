@@ -1,1 +1,0 @@
-For our mini JavaScript client that works with node.js too, please see [this repository](https://github.com/import-io/client-js-mini).
