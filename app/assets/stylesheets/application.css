@@ -134,6 +134,20 @@ h1 {
 .elder_leagues {
   float: left;
   margin-right: 10px;
+  list-style-type: none;
+}
+
+.elder_button {
+  background-color: rgba(0, 0, 0, 0.72);
+}
+
+.elder_button:hover {
+  background-color: rgba(25, 144, 75, 0.8);
+}
+
+.elder_link {
+  color: white;
+  text-decoration: none;
 }
 
 .title_container {
